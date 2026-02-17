@@ -98,6 +98,8 @@ All outputs, including metrics and figures, will be stored in the `outputs/` fol
 
 ---
 
+## ACKNOWLEDGEMENTS
+
 We acknowledge the authors of *Deep learning-based plastic classification using spectroscopic data* for providing both the baseline implementations and the reference model used for comparison in this work.
 Their code is publicly available at: [https://github.com/aruMMG/PLASTIC](https://github.com/aruMMG/PLASTIC).
 

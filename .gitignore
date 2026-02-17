@@ -1,6 +1,10 @@
-echo "data/" >> .gitignore
-echo "outputs/" >> .gitignore
-echo "*.cache" >> .gitignore
-echo "*.tmp" >> .gitignore
-echo "*.log" >> .gitignore
-echo "__pycache__/" >> .gitignore
+data/
+outputs/
+
+__pycache__/
+*.pyc
+*.pyo
+*.cache
+*.tmp
+*.log
+

@@ -1,7 +1,17 @@
 # Multi-Scale Feature Attention Network
 
 ### TL;DR
-Reliable polymer identification is essential for ensuring the quality and safety of recycled plastics, yet conventional sorting and spectroscopic techniques often struggle to deliver robust discrimination. Terahertz (THz) spectroscopy offers a promising alternative, providing high-resolution and non-destructive measurements. In this work, we leverage THz signals to classify 12 types of polymers, including pure polymers, multilayer films, commercial blends, and biopolymers. To handle the complexity of these spectral signals, we propose the Multi-Scale Feature Attention Network (MSFAN), a novel deep learning architecture tailored for THz data. The framework integrates feature gating for signal recalibration and multi-scale parallel convolutions to capture diverse frequency patterns. These features are further refined through cross-feature attention and attention pooling, enabling the model to intrinsically highlight the most informative THz regions. MSFAN consistently outperforms state-of-the-art models, reaching a classification accuracy of 85.2%. This study demonstrates the potential of combining THz spectroscopy with deep learning techniques for effective, scalable, and interpretable polymer classification.
+
+Reliable polymer identification is essential for ensuring the quality and safety of recycled plastics, yet conventional sorting and spectroscopic techniques often struggle to deliver robust discrimination. Terahertz (THz) spectroscopy offers a promising alternative, providing high-resolution and non-destructive measurements. In this work, we leverage THz signals to classify 12 types of polymers, including pure polymers, multilayer films, commercial blends, and biopolymers.
+
+To handle the complexity of these spectral signals, we propose the Multi-Scale Feature Attention Network (MSFAN), a novel deep learning architecture tailored for THz data. MSFAN integrates:
+
+- **Feature gating** for adaptive signal recalibration
+- **Multi-scale parallel convolutions** to capture complementary frequency patterns
+- **Cross-feature attention** to model interdependencies
+- **Attention pooling** to emphasize the most informative spectral regions
+
+MSFAN consistently outperforms state-of-the-art models, reaching a classification accuracy of 85.2%. This study demonstrates the potential of combining THz spectroscopy with deep learning techniques for effective, scalable, and interpretable polymer classification.
 
 <p align="center">
   <img src="figures/msfan_figure.png" alt="Main figure" width="1000"/>
@@ -29,18 +39,18 @@ Reliable polymer identification is essential for ensuring the quality and safety
 │
 ├── figures/                   # Figures used in the paper
 │
-├── outputs/                   # Results of training, evaluation, and ablations
+├── outputs/                   # Results of MSFAN and its ablations
 │
 ├── src/                       # Source code
 │   ├── data_loader.py           # Functions for loading and preprocessing THz data
 │   ├── losses.py                # Custom loss functions
 │   ├── main.py                  # Main training / evaluation script
 │   ├── models.py                # MSFAN architecture and variants
-│   ├── utils.py                 # Utilities: metrics, experiment helpers, table generation
+│   ├── utils.py                 # Utilities: experiment helpers, metrics, table generation
 │
 ├── requirements.txt           # Python dependencies
 ├── run_best_model.py          # Script to train / evaluate the final MSFAN model
-├── run_ablations.py           # Script to run ablation studies
+├── run_ablations.py           # Script to run ablation studies: aggregation, modules, l1
 
 ```
 
@@ -83,3 +93,15 @@ Where `<type>` can be:
 - **aggregation**: Tests different aggregation strategies: hg_only, lg_only, mean, max, concat, dual
 - **modules**: Tests MSFAN components individually (pooling only, gating only, conv only, attention only) and removals  
 - **l1**: Tests the effect of the L1 sparsity weight
+
+All outputs, including metrics and figures, will be stored in the `outputs/` folder.
+
+---
+
+We acknowledge the authors of *Deep learning-based plastic classification using spectroscopic data* for providing both the baseline implementations and the reference model used for comparison in this work.
+Their code is publicly available at: [https://github.com/aruMMG/PLASTIC](https://github.com/aruMMG/PLASTIC).
+
+The raw THz dataset employed in this study is openly accessible at:
+[https://github.com/danimp94/PLASTICS-THz](https://github.com/danimp94/PLASTICS-THz/tree/main/data/experiment_5_plastics).
+
+We sincerely thank the authors for supporting open and reproducible research.

@@ -60,7 +60,7 @@ MSFAN consistently outperforms state-of-the-art models, reaching a classificatio
 
 ### 1. Runtime Environment
 
-The project was developed and tested in the official NVIDIA container:
+To ensure reproducibility, the project was developed and tested in the official NVIDIA container:
 
 - Docker Image: nvcr.io/nvidia/pytorch:23.10-py3
 

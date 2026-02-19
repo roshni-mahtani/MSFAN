@@ -100,7 +100,7 @@ All outputs, including metrics and figures, will be stored in the `outputs/` fol
 
 ## ACKNOWLEDGEMENTS
 
-We acknowledge the authors of *Deep learning-based plastic classification using spectroscopic data* for providing both the baseline implementations and the reference model used for comparison in this work.
+We acknowledge the authors of <a href="https://www.sciencedirect.com/science/article/pii/S0959652625021432" style="color:blue;">*Deep learning-based plastic classification using spectroscopic data*</a> for providing both the baseline implementations and the reference model used for comparison in this work.
 Their code is publicly available at: [https://github.com/aruMMG/PLASTIC](https://github.com/aruMMG/PLASTIC).
 
 The raw THz dataset employed in this study is openly accessible at:
